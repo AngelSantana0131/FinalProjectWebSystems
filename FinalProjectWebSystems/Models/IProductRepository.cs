@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectWebSystems.Models
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         IEnumerable<Product> Products { get; }
     }
