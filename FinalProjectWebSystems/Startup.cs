@@ -10,17 +10,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinalProjectWebSystems.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace FinalProjectWebSystems
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        IConfigurationRoot Configuration;
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json").Build();
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -31,6 +34,9 @@ namespace FinalProjectWebSystems
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IProductRepository, EFProductRepository>();
 
             services.AddTransient<IProductRepository, FakeProductRepository>();
 
