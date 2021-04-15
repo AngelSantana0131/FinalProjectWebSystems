@@ -38,8 +38,6 @@ namespace FinalProjectWebSystems
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IProductRepository, EFProductRepository>();
 
-            services.AddTransient<IProductRepository, FakeProductRepository>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
