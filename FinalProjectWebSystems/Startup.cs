@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinalProjectWebSystems.Models;
 
 namespace FinalProjectWebSystems
 {
@@ -31,6 +32,7 @@ namespace FinalProjectWebSystems
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IProductRepository, FakeProductRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
