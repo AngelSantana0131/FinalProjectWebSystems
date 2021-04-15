@@ -15,21 +15,21 @@ namespace FinalProjectWebSystems.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult BusinessInfo()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Policies()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your policies page.";
 
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult FAQ()
         {
             return View();
         }
