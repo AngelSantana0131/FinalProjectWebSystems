@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWebSystems.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210415232504_Initial")]
+    [Migration("20210416001946_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,13 +26,19 @@ namespace FinalProjectWebSystems.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Category");
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Color");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("Gender");
 
                     b.Property<string>("Name");
 
                     b.Property<decimal>("Price");
+
+                    b.Property<string>("Type");
 
                     b.HasKey("ProductId");
 
