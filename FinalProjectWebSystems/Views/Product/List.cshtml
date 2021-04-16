@@ -2,8 +2,12 @@
 @foreach (var p in Model)
 {
 <div>
-    <h3>@p.Name</h3>
+    <h3>@p.Brand  @p.Name</h3>
+    <h4>@p.Gender</h4>
+    <h4>@p.Type</h4>
+    <h4>@p.Color</h4>
     @p.Description
     <h4>@p.Price.ToString("c")</h4>
 </div>
+<br>
 }
