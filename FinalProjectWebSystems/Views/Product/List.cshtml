@@ -1,15 +1,27 @@
 ﻿@model ProductsListViewModel
 @foreach (var p in Model.Products)
 {
-<div>
-    <img style="height: 30%; width: 30%; object-fit: cover;" src="~/images/@p.Picture" alt="Product Image">
-    <h3>@p.Brand  @p.Name</h3>
-    <h4>@p.Gender</h4>
-    <h4>@p.Type</h4>
-    <h4>@p.Color</h4>
-    @p.Description
-    <h4>@p.Price.ToString("c")</h4>
-</div>
+
+<table>
+    <tr>
+        <td style="width:40%;">
+            <div>
+                <img style="height: 70%; width: 70%; object-fit: cover;" src="~/images/@p.Picture" alt="Product Image">
+            </div>
+        </td>
+
+        <td>
+            <div>
+                <h3>@p.Brand  @p.Name</h3>
+                <h4>@p.Gender</h4>
+                <h4>@p.Type</h4>
+                <h4>@p.Color</h4>
+                @p.Description
+                <h4>@p.Price.ToString("c")</h4>
+            </div>
+        </td>
+    </tr>
+</table>
 <br>
 }
 <div page-model="@Model.PagingInfo" page-action="List"></div>
