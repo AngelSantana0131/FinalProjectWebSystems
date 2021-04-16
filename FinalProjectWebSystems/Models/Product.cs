@@ -7,7 +7,7 @@ namespace FinalProjectWebSystems.Models
 {
     public class Product
     {
-        public int ProductId { get; set;}
+        public int ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -15,5 +15,6 @@ namespace FinalProjectWebSystems.Models
         public string Gender { get; set; }
         public string Color { get; set; }
         public string Type { get; set; }
+        public string Picture { get; set; }
     }
 }

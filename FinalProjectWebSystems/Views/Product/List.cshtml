@@ -2,6 +2,7 @@
 @foreach (var p in Model.Products)
 {
 <div>
+    <img style="height: 30%; width: 30%; object-fit: cover;" src="~/images/@p.Picture" alt="Product Image">
     <h3>@p.Brand  @p.Name</h3>
     <h4>@p.Gender</h4>
     <h4>@p.Type</h4>

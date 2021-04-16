@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWebSystems.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210416001946_Initial")]
+    [Migration("20210416022029_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,8 @@ namespace FinalProjectWebSystems.Migrations
                     b.Property<string>("Gender");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Picture");
 
                     b.Property<decimal>("Price");
 

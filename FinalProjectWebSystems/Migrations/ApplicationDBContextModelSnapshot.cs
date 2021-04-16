@@ -34,6 +34,8 @@ namespace FinalProjectWebSystems.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Picture");
+
                     b.Property<decimal>("Price");
 
                     b.Property<string>("Type");
