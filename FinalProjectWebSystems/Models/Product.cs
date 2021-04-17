@@ -16,5 +16,10 @@ namespace FinalProjectWebSystems.Models
         public string Color { get; set; }
         public string Type { get; set; }
         public string Picture { get; set; }
+        
+        public Product()
+        {
+
+        }// constructor for product
     }
 }
