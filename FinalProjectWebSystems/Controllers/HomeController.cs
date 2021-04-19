@@ -17,14 +17,14 @@ namespace FinalProjectWebSystems.Controllers
 
         public IActionResult BusinessInfo()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "About Cloud Footwear";
 
             return View();
         }
 
         public IActionResult Policies()
         {
-            ViewData["Message"] = "Your policies page.";
+            ViewData["Message"] = "Our Policies";
 
             return View();
         }
