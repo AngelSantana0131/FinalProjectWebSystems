@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace FinalProjectWebSystems.Models
 {
-    public class ApplicationDBContext : DbContext
+
+    public class ApplicationDBContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext>options):
             base(options)

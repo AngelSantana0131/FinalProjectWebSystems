@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FinalProjectWebSystems.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWebSystems.Controllers
 {
@@ -13,9 +14,12 @@ namespace FinalProjectWebSystems.Controllers
             repository = repoService;
             cart = cartService;
         }
+
+        [Authorize]
         public ViewResult Checkout() => View(new Order());
 
         [HttpPost]
+        [Authorize]
         public IActionResult Checkout(Order order)
         {
             if (cart.Lines.Count() == 0)

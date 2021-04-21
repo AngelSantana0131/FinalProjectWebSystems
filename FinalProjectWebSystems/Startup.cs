@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using FinalProjectWebSystems.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProjectWebSystems
 {
@@ -41,6 +42,10 @@ namespace FinalProjectWebSystems
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IOrderRepository, EFOrderRepository>();
 
+            services.AddIdentity<AppUser, IdentityRole<Guid>>()
+                 .AddEntityFrameworkStores<ApplicationDBContext>()
+                 .AddDefaultTokenProviders();
+
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .AddNewtonsoftJson();
             services.AddMemoryCache();
@@ -62,6 +67,7 @@ namespace FinalProjectWebSystems
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
             app.UseSession();
 
