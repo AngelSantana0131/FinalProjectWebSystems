@@ -62,19 +62,11 @@ namespace FinalProjectWebSystems.Migrations
                     b.Property<bool>("GiftWrap")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Line1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line3")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Shipping")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

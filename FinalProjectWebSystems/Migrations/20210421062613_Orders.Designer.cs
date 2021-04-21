@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWebSystems.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210421042036_Orders")]
+    [Migration("20210421062613_Orders")]
     partial class Orders
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,19 +64,11 @@ namespace FinalProjectWebSystems.Migrations
                     b.Property<bool>("GiftWrap")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Line1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line3")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Shipping")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
