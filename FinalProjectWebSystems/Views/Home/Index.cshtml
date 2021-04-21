@@ -34,7 +34,7 @@
                 <hr>
                 <p>Shoes like no other. Here at Cloud Footwear we proud ourselves on providing you the highest quality at the best price, with all the brands you know and love.</p>
                 <p>It really is like walking on air. Don't believe us? Take a look.</p>
-                <a class="btn btn-outline-info btn-lg" href="Product/List">Shop &raquo;</a>
+                <a asp-action="List" asp-controller="Product" class="btn btn-outline-info btn-lg">Shop &raquo;</a>
             </div>
             <div class="col-md-4 mb-5">
                 <h2>Online Support</h2>
@@ -66,7 +66,7 @@
                         <p class="card-text">Click this link to view our most frequently asked questions.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="Home/Faq" class="btn btn-outline-warning">FAQ</a>
+                        <a asp-action="faq" asp-controller="Home" class="btn btn-outline-warning">FAQ</a>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                         <p class="card-text">Click this link to view our privacy policy.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="Home/Policies" class="btn btn-outline-danger">Find Out More!</a>
+                        <a asp-action="policies" asp-controller="Home" class="btn btn-outline-danger">Find Out More!</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                         <p class="card-text">Cloud Footwear has you covered.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="Product/List" class="btn btn-outline-secondary">Shop</a>
+                        <a asp-action="List" asp-controller="Product" class="btn btn-outline-secondary">Shop</a>
                     </div>
                 </div>
             </div>
