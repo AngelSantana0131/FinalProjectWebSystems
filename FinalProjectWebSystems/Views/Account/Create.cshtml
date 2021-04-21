@@ -1,7 +1,6 @@
 ﻿@model LoginModel
 @{
     ViewBag.Title = "Create User Account";
-    Layout = "_AdminLayout";
 }
 <div asp-validation-summary="All" class="text-danger"></div>
 <form method="post" asp-action="Create" asp-antiforgery="true" class="form-horizontal">
@@ -21,15 +20,6 @@
         <div class="col-sm-offset-2">
             <button type="submit" class="btn btn-primary">Create</button>
             <button type="reset" class="btn btn-primary">Reset</button>
-            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
         </div>
     </div>
 </form>
-
-<div class="mt-4">
-    <p>Already have an account?</p>
-    <p>Log in below.</p>
-</div>
-
-
-<a href="Login" class="btn btn-primary">Log In</a>

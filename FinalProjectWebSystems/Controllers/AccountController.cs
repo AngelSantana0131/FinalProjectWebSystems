@@ -42,7 +42,7 @@ namespace SportsStore.Controllers
                     if ((await signInManager.PasswordSignInAsync(user,
                      loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
+                        return Redirect(loginModel?.ReturnUrl ?? "/Home/Index");
                     }
                 }
             }
@@ -98,6 +98,7 @@ namespace SportsStore.Controllers
         }
         private void AddErrors(IdentityResult result)
         {
+
         foreach (IdentityError error in result.Errors)
             {
                 ModelState.TryAddModelError("", error.Description);
