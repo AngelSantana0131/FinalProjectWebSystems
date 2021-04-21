@@ -32,5 +32,4 @@ namespace FinalProjectWebSystems.Controllers
                 }
             });
     }
-    //d
 }
