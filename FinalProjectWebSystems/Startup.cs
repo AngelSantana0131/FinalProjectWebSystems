@@ -11,14 +11,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalProjectWebSystems.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Hosting;
 
 namespace FinalProjectWebSystems
 {
     public class Startup
     {
         IConfigurationRoot Configuration;
-        public Startup(IHostingEnvironment env)
+        public Startup(IWebHostEnvironment env)
         {
             Configuration = new ConfigurationBuilder()
             .SetBasePath(env.ContentRootPath)
@@ -48,7 +48,7 @@ namespace FinalProjectWebSystems
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
