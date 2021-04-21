@@ -15,18 +15,17 @@
                 <h4>@Model.Color</h4>
                 @Model.Description
                 <h4>@Model.Price.ToString("c")</h4>
+                <form id="@Model.ProductId" asp-action="AddToCart"
+                      asp-controller="Cart" method="post" class="float-right m-2 p-1">
+                    <input type="hidden" asp-for="ProductId" />
+                    <input type="hidden" name="returnUrl"
+                           value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <button type="submit" class="btn btn-info btn-sm float-right">
+                        Add To Cart
+                    </button>
+                </form>
             </div>
         </td>
-        <td>
-            <form id="@Model.ProductId" asp-action="AddToCart"
-                  asp-controller="Cart" method="post" class="float-right m-2 p-1">
-                <input type="hidden" asp-for="ProductId" />
-                <input type="hidden" name="returnUrl"
-                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                <button type="submit" class="btn btn-info btn-sm float-right">
-                    Add To Cart
-                </button>
-            </form>
-        </td>
+
     </tr>
 </table>
