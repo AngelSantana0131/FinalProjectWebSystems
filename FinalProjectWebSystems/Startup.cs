@@ -73,7 +73,7 @@ namespace FinalProjectWebSystems
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                  name: null,
                 template: "{category}/Page{page:int}",
@@ -92,7 +92,7 @@ namespace FinalProjectWebSystems
                 routes.MapRoute(
                 name: null,
                template: "",
-               defaults: new { controller = "Product", action = "List", page = 1 });
+               defaults: new { controller = "Home", action = "Index", page = 1 });
                 routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
             });
         }
